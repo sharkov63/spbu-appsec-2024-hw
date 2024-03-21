@@ -1,0 +1,10 @@
+rules:
+  - id: commons-text-1.9
+    patterns:
+      - pattern-inside: |
+          javax.script.ScriptEngine $SCRIPT_ENGINE = ...;
+          ...
+      - pattern: $SCRIPT_ENGINE.eval(...);
+    message: Found call to javax.script.ScriptEngine#eval
+    languages: [java]
+    severity: WARNING
